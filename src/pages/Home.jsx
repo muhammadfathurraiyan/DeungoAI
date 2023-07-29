@@ -98,7 +98,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-900 ">
+    <div className="min-h-screen bg-neutral-900 flex items-center justify-center ">
       <div className="grid grid-cols-1 max-sm:mx-2">
         {/* LOGO */}
         <div className="flex justify-center">
@@ -126,7 +126,7 @@ const Home = () => {
           </svg>
         </div>
         {/* CHATBOX */}
-        <div className="mx-auto grid gap-6 grid-cols-[repeat(1,700px)] justify-center max-md:grid-cols-1 max-sm:mx-4">
+        <div className="mx-auto grid gap-6 grid-cols-[repeat(1,700px)] justify-center max-md:grid-cols-1 max-md:mx-4">
           <div
             key={212339795}
             className="message-box h-[460px] max-sm:h-[500px] overflow-auto outline outline-[rgba(10,10,10,0.46)] bg-neutral-800 relative rounded-2xl px-8 py-8 max-sm:py-3 max-sm:px-3"
@@ -170,11 +170,11 @@ const Home = () => {
         {/* BUTTONS */}
         <div
           onClick={handleStopListening}
-          className="mx-auto my-3 mb-3 grid gap-6 grid-cols-3 justify-center items-center gap-x-7"
+          className="mx-auto mt-3 grid grid-cols-3 justify-center items-center gap-x-7 max-md:mx-4 max-md:gap-x-4"
         >
           <div className="cursor-pointer">
             <div className="group py-3 px-4 rounded-xl hover:bg-[rgb(242,56,90,0.1)] duration-75 hover:outline hover:outline-[#f2385a] bg-[rgb(233,241,223,0.1)] ">
-              <p className="text-[#e9f1df]  group-hover:text-[#f2385a] flex justify-center">
+              <p className="text-[#e9f1df]  group-hover:text-[#f2385a]  text-center">
                 Stop Listening
               </p>
             </div>
@@ -199,7 +199,7 @@ const Home = () => {
           </div>
           <div onClick={resetTranscript} className="cursor-pointer">
             <div className="group py-3 px-4 rounded-xl hover:bg-[rgb(245,165,3,.1)] duration-75 hover:outline hover:outline-[#f5a503] bg-[rgb(233,241,223,0.1)] ">
-              <p className="text-[#e9f1df] group-hover:text-[#f5a503] flex justify-center">
+              <p className="text-[#e9f1df] group-hover:text-[#f5a503] text-center">
                 Reset Transcript
               </p>
             </div>
