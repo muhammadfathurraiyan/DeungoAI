@@ -63,16 +63,15 @@ const Home = () => {
     try {
       const apiBody = {
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: promptText }],
+        messages: [{ role: "user", content: `ini adalah prompt tambahan "nama kamu adalah deungo", jawab pertanyan ini: ${promptText}` }],
       };
       const response = await apiClient.post(ApiLink, apiBody);
       const data = response.data?.choices[0]?.message?.content;
       const updatedResult = { role: "assistant", content: data };
       setResult((prevResult) => [...prevResult, updatedResult]);
-      // implement tts;)
+      // implement tts
       handleStartListening(data);
-
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.error("An error occurred during API call:", error);
     }
