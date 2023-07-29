@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    font-family: 'Open Sans', sans-serif;
-    @apply scroll-smooth
+    font-family: "Open Sans", sans-serif;
+    @apply scroll-smooth;
   }
-  
-  body::-webkit-scrollbar{
+
+  body::-webkit-scrollbar {
     display: none;
   }
 
-  .message-box::-webkit-scrollbar{
+  .message-box::-webkit-scrollbar {
     display: none;
   }
-  
+
   svg {
     position: flex;
     width: 100%;
@@ -31,32 +31,32 @@
     -webkit-animation: stroke 6s infinite linear;
     animation: stroke 6s infinite linear;
   }
-  .txt:nth-child(5n+1) {
+  .txt:nth-child(5n + 1) {
     stroke: #f2385a;
     -webkit-animation-delay: -1.2s;
     animation-delay: -1.2s;
   }
-  .txt:nth-child(5n+2) {
+  .txt:nth-child(5n + 2) {
     stroke: #f5a503;
     -webkit-animation-delay: -2.4s;
     animation-delay: -2.4s;
   }
-  .txt:nth-child(5n+3) {
+  .txt:nth-child(5n + 3) {
     stroke: #e9f1df;
     -webkit-animation-delay: -3.6s;
     animation-delay: -3.6s;
   }
-  .txt:nth-child(5n+4) {
+  .txt:nth-child(5n + 4) {
     stroke: #56d9cd;
     -webkit-animation-delay: -4.8s;
     animation-delay: -4.8s;
   }
-  .txt:nth-child(5n+5) {
+  .txt:nth-child(5n + 5) {
     stroke: #3aa1bf;
     -webkit-animation-delay: -6s;
     animation-delay: -6s;
   }
-  
+
   @-webkit-keyframes stroke {
     100% {
       stroke-dashoffset: -400;
@@ -66,6 +66,5 @@
     100% {
       stroke-dashoffset: -400;
     }
-  } 
+  }
 }
-

@@ -6,10 +6,7 @@ const Welcome = () => {
     <div className="min-h-screen bg-neutral-900 flex justify-center items-center ">
       <div className="grid grid-cols-1 max-sm:mx-2">
         <div className="flex justify-center">
-          <svg
-            viewBox="0 0 600 250"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
             <symbol id="s-txt">
               <text
                 className="text-9xl font-semibold"
