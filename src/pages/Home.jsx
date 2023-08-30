@@ -4,13 +4,6 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-const ApiLink = "https://free.churchless.tech/v1/chat/completions";
-const apiClient = axios.create({
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
 const Home = () => {
   const {
     transcript,
@@ -60,26 +53,30 @@ const Home = () => {
   };
 
   const apiCall = async (promptText) => {
-    try {
-      const apiBody = {
+    const response = await axios.post(
+      "https://api.nova-oss.com/v1/chat/completions",
+      {
         model: "gpt-3.5-turbo",
         messages: [
           {
             role: "user",
-            content: `jawab ini secara singkat padat dan jelas: ${promptText}.`,
+            content: `jawab secara singkat pertanyaan ni ${promptText}`,
           },
         ],
-      };
-      const response = await apiClient.post(ApiLink, apiBody);
-      const data = response.data?.choices[0]?.message?.content;
-      const updatedResult = { role: "assistant", content: data };
-      setResult((prevResult) => [...prevResult, updatedResult]);
-      // implement tts
-      handleStartListening(data);
-      // console.log(data);
-    } catch (error) {
-      console.error("An error occurred during API call:", error);
-    }
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+        },
+      }
+    );
+    const data = response.data?.choices[0]?.message?.content;
+    const updatedResult = { role: "assistant", content: data };
+    setResult((prevResult) => [...prevResult, updatedResult]);
+    // implement tts
+    handleStartListening(data);
+    // console.log(data);
   };
 
   if (!browserSupportsSpeechRecognition) {
