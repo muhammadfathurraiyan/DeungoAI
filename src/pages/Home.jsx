@@ -68,7 +68,7 @@ const Home = () => {
         headers: {
           "Content-Type": "application/json",
           // Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-          Authorization: `Bearer ${process.env.VITE_API_KEY}`,
+          Authorization: "Bearer " + process.env.VITE_API_KEY,
         },
       }
     );
