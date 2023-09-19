@@ -26,7 +26,7 @@ const Welcome = () => {
           </svg>
         </div>
         <p className="text-[#e9f1df] text-center text-xl mt-[-1rem] max-sm:text-lg">
-          Voice Assistant WebApp with ReactJS by:{" "}
+          Voice Assistant WebApp by:{" "}
           <a
             href="https://muhammadfathurraiyan.site"
             target="_blank"
