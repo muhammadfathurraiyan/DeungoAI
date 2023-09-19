@@ -68,7 +68,7 @@ const Home = () => {
         headers: {
           "Content-Type": "application/json",
           // Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-          Authorization: "Bearer " + process.env.VITE_API_KEY,
+          Authorization: "Bearer " + import.meta.env.VITE_API_KEY,
         },
       }
     );
@@ -79,6 +79,9 @@ const Home = () => {
     handleStartListening(data);
     // console.log(data);
   };
+
+  
+  // console.log(import.meta.env.VITE_API_KEY);
 
   if (!browserSupportsSpeechRecognition) {
     return (
