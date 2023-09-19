@@ -49,30 +49,14 @@ const Home = () => {
     const updatedResult = { role: "user", content: transcript };
     setResult((prevResult) => [...prevResult, updatedResult]);
     resetTranscript();
-    apiCall(transcript);
+    apiCall(`jawab secara singkat pertanyaan ni ${transcript}`);
   };
 
-  const apiCall = async (promptText) => {
+  const apiCall = async (transcript) => {
     const response = await axios.post(
-      "https://api.nova-oss.com/v1/chat/completions",
-      {
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "user",
-            content: `jawab secara singkat pertanyaan ni ${promptText}`,
-          },
-        ],
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          // Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-          Authorization: "Bearer " + import.meta.env.VITE_API_KEY,
-        },
-      }
+      `http://localhost:3000/home/${transcript}`
     );
-    const data = response.data?.choices[0]?.message?.content;
+    const data = response.data;
     const updatedResult = { role: "assistant", content: data };
     setResult((prevResult) => [...prevResult, updatedResult]);
     // implement tts
@@ -80,7 +64,6 @@ const Home = () => {
     // console.log(data);
   };
 
-  
   // console.log(import.meta.env.VITE_API_KEY);
 
   if (!browserSupportsSpeechRecognition) {
