@@ -54,7 +54,7 @@ const Home = () => {
 
   const apiCall = async (transcript) => {
     const response = await axios.post(
-      `http://localhost:3000/home/${transcript}`
+      `https://deungo-server.vercel.app/api/${transcript}`
     );
     const data = response.data;
     const updatedResult = { role: "assistant", content: data };
