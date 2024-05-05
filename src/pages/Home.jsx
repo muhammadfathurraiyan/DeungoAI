@@ -49,7 +49,9 @@ const Home = () => {
     const updatedResult = { role: "user", content: transcript };
     setResult((prevResult) => [...prevResult, updatedResult]);
     resetTranscript();
-    apiCall(`jawab secara singkat pertanyaan ni ${transcript}`);
+    apiCall(
+      `kamu bernama Deungo dan akan menjawab pertanyaan berikut ${transcript}`
+    );
   };
 
   const apiCall = async (transcript) => {
@@ -63,8 +65,6 @@ const Home = () => {
     handleStartListening(data);
     // console.log(data);
   };
-
-  // console.log(import.meta.env.VITE_API_KEY);
 
   if (!browserSupportsSpeechRecognition) {
     return (
